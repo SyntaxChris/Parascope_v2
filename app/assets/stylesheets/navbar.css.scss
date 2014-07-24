@@ -1,0 +1,32 @@
+header {
+  font-family: 'Roboto', sans-serif;
+  height: 50px;
+  top: 0;
+  right:0;
+  left:0;
+  line-height: 50px;
+  background: #efefef;
+  z-index:25;
+  position:fixed;
+}
+
+.home-menu ul {
+  float: right;
+}
+  
+
+
+header ul li a {
+  color: #71767a;
+  font-size: 17px;
+  font-weight: 300;
+  text-decoration: none;
+}
+header ul li a:hover {
+  color: white;
+}
+header ul .active a {
+  color: white;
+  font-weight: 500;
+}
+

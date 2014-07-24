@@ -1,0 +1,16 @@
+<% title "Welcome" %>
+<div class='home'>
+  <div class="content">
+    <hgroup>
+      <% if user_signed_in? %>
+        <div class='url-bar'>
+          <%= render 'articles/form'%>
+          <span id='submit'>next</span>
+        </div>
+      <% else %>
+        <h1>Your pathways to content, organized.</h1>
+      <% end %>
+    </hgroup>
+  </div>
+  <div class="overlay"></div>
+</div>

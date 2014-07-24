@@ -1,0 +1,49 @@
+<%= form_for([@collection, @article]) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :url %>
+  <%= f.text_field :url, placeholder: 'http://' %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      $('#article[url]').change(function(){
+
+        var url = $('#article[url]').val();
+
+        $.ajax({
+            url: url,
+            success: function (responseHtml) {
+                var aTitle = $(responseHtml).filter('title').text();
+            },
+            error: function () {
+                var aTitle = "Sorry, page does not exist"
+            }
+        });
+
+        $('#article[title]').val(aTitle);
+
+      });
+    });
+  </script>
+  <% if params[:collection_id] %>
+    <% if Collection.find(params[:collection_id]).name == 'Unsorted' %>
+      <%= f.collection_select(:collection_ids, current_user.collections, :id, :name ) %>
+    <% else %>
+      <%= f.hidden_field(:collection_ids, :value => params[:collection_id]) %>
+    <% end %>
+  <% else %>
+    <%= f.collection_select(:collection_ids, current_user.collections, :id, :name ) %>
+  <% end %>
+  <%= f.submit 'save'%>
+
+<% end %>
