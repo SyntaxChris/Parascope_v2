@@ -91,8 +91,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    masonry-rails (0.2.1)
-      rails
     meta_request (0.3.3)
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (~> 1.1)
@@ -232,7 +230,6 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  masonry-rails
   meta_request
   omniauth-google-oauth2
   pg

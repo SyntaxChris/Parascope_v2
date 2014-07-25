@@ -7,7 +7,7 @@
 </div>
 <div class="l-content">
     <div class="pricing-tables pure-g">
-    <% @collection.articles.each do |article| %>
+    <% @collection.articles.each do |article|  %>
      <% if !article.archived? %>
         <div class="pure-u-1 pure-u-md-1-3">
             <div class="pricing-table pricing-table-free">
@@ -41,7 +41,7 @@
 
             </div>
         </div>
-     <% end %>
+    <% end %>
     <% end %>
     </div> <!-- end pricing-tables -->
 </div>

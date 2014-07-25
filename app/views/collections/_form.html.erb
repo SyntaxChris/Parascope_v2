@@ -8,9 +8,9 @@
         <li><%= msg %></li>
       <% end %>
       </ul>
-    </div>
+
   <% end %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
+  <%= f.text_field :name, placeholder: 'collection name' %>
+  <%= f.submit value: 'create' %>
 <% end %>

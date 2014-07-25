@@ -13,8 +13,10 @@ header {
 .home-menu ul {
   float: right;
 }
-  
 
+.home-menu.pure-menu.pure-menu-open.pure-menu-horizontal.pure-menu-fixed.pure-menu-notouch {
+  background: #F1F5F2;
+}
 
 header ul li a {
   color: #71767a;
@@ -29,4 +31,3 @@ header ul .active a {
   color: white;
   font-weight: 500;
 }
-

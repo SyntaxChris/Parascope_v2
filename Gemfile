@@ -44,8 +44,6 @@ gem 'purecss-rails'
 # User authentication
 gem 'devise'
 
-gem 'masonry-rails'
-
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
